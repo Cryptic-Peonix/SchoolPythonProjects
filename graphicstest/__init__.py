@@ -7,6 +7,8 @@ def main():
     p = gr.Point(50, 50)
     t = gr.Text(p, "Python", gr.TextJustify.RIGHT)
     t.draw(win)
+    b = gr.Rectangle(gr.Point(100, 50), gr.Point(150, 100))
+    b.draw(win)
     win.getMouse()
 
 

@@ -5,23 +5,37 @@ from math import *
 
 
 def main():
-    sleepy()
-    ascend()
-    loopy()
+    """Configured to only run problem 12"""
+    # sleepy()
+    # ascend()
+    # loopy()
     triangle()
 
 
 def triangle():
     """Problem 12 on lab 5"""
-    a = eval(input("Enter the length of side a: "))
-    b = eval(input("Enter the length of side b: "))
-    hyp = eval(input("Enter the length of the hypotenuse: "))
-    triangle = False
+    a = None
+    b = None
+    hyp = None
+    while a is None and b is None and hyp is None:
+        try:
+            a = eval(input("Enter the length of side a: "))
+        except ValueError:
+            print("A number was not entered")
+        try:
+            b = eval(input("Enter the length of side b: "))
+        except ValueError:
+            print("A number was not entered")
+        try:
+            hyp = eval(input("Enter the length of the hypotenuse: "))
+        except ValueError:
+            print("A number was not entered")
+    tri = False
 
     if (a ** 2) + (b ** 2) > hyp ** 2:
-        triangle = True
+        tri = True
 
-    if not triangle:
+    if not tri:
         print("Triangle not possible!")
     else:
         print("Triangle possible! Here is the data: ")
